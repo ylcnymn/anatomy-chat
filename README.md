@@ -1,94 +1,99 @@
-# Anatomy Chat: Interactive Anatomical Learning and Modeling Platform
+# 🧠 Anatomy Chat: AI-Powered Anatomical Modeling Platform
 
-## About the Project
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescript.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC)](https://tailwindcss.com/)
 
-Anatomy Chat is a modern web application that transforms human anatomy from static images or text-based documents into an interactive experience. This platform models each organ as "intelligent entities" that have their own personality, can share information, and respond to specific questions from the user's perspective.
+**Anatomy Chat** is a high-fidelity, interactive educational platform designed to demonstrate the power of **Large Language Models (LLMs)** in specialized domain modeling. It transforms static anatomical data into a dynamic, multi-modal learning experience where every organ is an "intelligent agent" with its own specific knowledge base, persona, and clinical context.
 
-The application is built on a multi-layered "Persona" system to appeal to a wide range of users, from medical students to curious children. Users can chat with their chosen organ with the seriousness of a doctor, the excitement of a curious student, or the imagination of a child.
+---
 
-## Key Features
+## 🚀 The Vision: Beyond Simple Chatbots
 
-### 1. Persona-Based AI Interaction
-The application operates the artificial intelligence in three core narrative modes:
-- **Doctor Mode:** Uses an academic language proficient in technical terminology, providing clinical findings and pathological details.
-- **Curious Mode:** Focuses on the functional features and interesting facts of the organ, blending science with everyday language.
-- **Child Mode:** An educational and entertaining language that explains the organ's duty in the body through a fairytale-like narrative using metaphors.
+This project is not just a chat interface; it is an exploration of **Architectural AI Orchestration**. It demonstrates how to:
+1.  **Structure Complex Ontologies:** Managing hierarchical anatomical systems (Nervous, Digestive, etc.) in a JSON-driven data layer.
+2.  **Impersonate Specialized Personas:** Using advanced prompt engineering to switch between academic (Doctor), educational (Curious), and metaphorical (Child) reasoning.
+3.  **State-Persistent Experience:** Leveraging local storage and Zustand to maintain complex session states without a heavy backend.
 
-### 2. Advanced Session Management (Multi-Session)
-Users can start multiple chat sessions for each organ:
-- Chats are automatically named based on the first message.
-- Fast switching between sessions is supported.
-- Session titles can be manually renamed or unnecessary sessions can be deleted.
+---
 
-### 3. Modern and Focused UI Architecture
-- **ChatGPT Architecture:** Features a fixed navigation panel on the left and a fluid, centered message area on the right.
-- **Smart Scroll:** Automatic scrolling stops when the user scrolls up to read past messages; it resumes once the user returns to the bottom.
-- **Dark Mode Optimization:** A "Deep Dark" design language has been adopted for night study, providing high contrast without eye strain.
+## ✨ Key Architectural Features
 
-## Technical Stack
+### 1. Persona-Driven LLM Framework
+The core innovation lies in the **dynamic system prompt generation**. Depending on the selected mode, the LLM adjusts its:
+-   **Vocabulary Depth:** From Latin medical terms to simple metaphors.
+-   **Reasoning Style:** Clinical diagnosis vs. functional curiosity.
+-   **Tone:** Empathetic, authoritative, or playful.
 
-- **Framework:** Next.js 14+ (App Router)
-- **Language:** TypeScript
-- **State Management:** Zustand (Persisted via browser storage)
-- **Styling:** Tailwind CSS + Vanilla CSS (Custom UI Components)
-- **Animations:** Framer Motion
-- **Icon Set:** Lucide React
-- **Containerization:** Docker & Docker Compose
+### 2. Hierarchical Anatomical Navigator (The "Body Map")
+A recursive, tree-based navigation system that allows users to drill down from major body systems to specific organic structures (e.g., *Digestive System -> Intestines -> Small Intestine -> Duodenum*).
 
-## Installation Guide
+### 3. Professional Research-Grade UI/UX
+-   **Obsidian Dark Aesthetic:** Designed for high focus and reduced eye strain.
+-   **Markdown & GFM Support:** Real-time rendering of structured data, including professional tables, zebra-striped for readability.
+-   **Smart-Stream Architecture:** Low-latency streaming responses with auto-scroll management for a smooth reading experience.
 
-### Requirements
-- Node.js (v18+) and npm/yarn or
-- Docker and Docker Compose
+---
+
+## 🛠️ Technical Stack & Skills Demonstrated
+
+| Layer | Technology | Skill Demonstrated |
+| :--- | :--- | :--- |
+| **Frontend** | Next.js 14 (App Router) | Modern React patterns, Server-side logic integration. |
+| **Logic** | TypeScript | Type-safe data modeling and interface definitions. |
+| **State** | Zustand + Middleware | Persistence, complex state synchronization, and hydratation. |
+| **Styling** | Tailwind CSS + Framer Motion | Fluid animations, responsive layouts, and modern design systems. |
+| **AI Layer** | OpenRouter / OpenAI API | Prompt engineering, streaming completions, and provider abstraction. |
+| **DevOps** | Docker & Compose | Containerization and environment consistency. |
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- An API Key from [OpenRouter](https://openrouter.ai/) or OpenAI.
 
 ### Standard Installation
-1. Clone the repository to your local directory:
-   ```bash
-   git clone [repo-url]
-   cd anatomy-chat
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the application in development mode:
-   ```bash
-   npm run dev
-   ```
-4. Navigate to `http://localhost:3000` in your browser.
+```bash
+git clone https://github.com/ylcnymn/anatomy-chat.git
+cd anatomy-chat
+npm install
+npm run dev
+```
 
-### Installation with Docker (Recommended)
-To run the application without dealing with dependencies:
+### Docker Setup (One-Click)
 ```bash
 docker-compose up --build
 ```
-This command will compile, optimize, and make the application available at `http://localhost:3000`.
 
-## Configuration
+---
 
-You can configure the following by clicking the "Model Settings" button in the application interface:
-- **API Provider:** OpenRouter compatible providers such as OpenAI, Claude, Groq, or Ollama.
-- **Model Selection:** The AI model to be used (e.g., gpt-4, claude-3-opus).
-- **API Key:** The secure key obtained from your provider.
-- **Parameters:** Temperature and Max Tokens settings.
+## 🧪 How It Works (The Method)
 
-## Project Structure
+The application follows a **"Configuration-First"** approach. 
+1. The user provides an API key and selects a model via the **Settings Modal**.
+2. When an organ is selected, the application injects the specific anatomical definition and the selected persona's behavioral guidelines into the **LLM System Prompt**.
+3. Conversations are managed in **Sessions**, allowing for multi-threaded learning paths per organ.
 
-- `/app`: Page structures, layouts, and UI components.
-- `/lib`: Core libraries containing the Zustand store, AI client, and persona logic.
-- `/data`: Dataset in JSON format containing anatomical data.
-- `/public`: Static assets.
+---
 
-## Legal Disclaimer
+## 📜 Legal Disclaimer
 
-**Important:** Anatomy Chat is a tool developed solely for educational and informational purposes. No content generated by the application represents professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional with any questions regarding health.
+**Important:** Anatomy Chat is an educational tool and a technical demonstration. It **does not** provide medical advice, diagnosis, or treatment. The content is generated by AI and may contain inaccuracies. Always consult a healthcare professional for medical concerns.
 
-## Author
+---
+
+## 👨‍💻 Author
 
 **Yalçın Yaman**
-- GitHub: [@ylcnymn](https://github.com/ylcnymn)
-- Project: [Anatomy Chat](https://github.com/ylcnymn/anatomy-chat)
+-   **GitHub:** [@ylcnymn](https://github.com/ylcnymn)
+-   **LinkedIn:** [Your Link Here]
+-   **Portfolio:** [Your Link Here]
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 📄 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
