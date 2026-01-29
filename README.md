@@ -1,11 +1,11 @@
 # 🧠 Anatomy Chat: AI-Powered Anatomical Modeling Platform
-<img width="1912" height="899" alt="image" src="https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b" />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescript.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC)](https://tailwindcss.com/)
 
+<img width="1912" height="899" alt="image" src="https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b" />
 **Anatomy Chat** is a high-fidelity, interactive educational platform designed to demonstrate the power of **Large Language Models (LLMs)** in specialized domain modeling. It transforms static anatomical data into a dynamic, multi-modal learning experience where every organ is an "intelligent agent" with its own specific knowledge base, persona, and clinical context.
 
 ---
