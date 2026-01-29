@@ -1,56 +1,313 @@
 [
   {
-    "id": "UBERON_0000955",
-    "name": "Brain",
-    "latin_name": "Encephalon",
-    "region": "Head",
-    "definition": "The primary organ of the central nervous system. Center for thinking, memory, and control.",
-    "importance": "Critical",
-    "icon": "Brain"
+    "id": "sys_nervous",
+    "name": "Nervous System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "brain",
+        "name": "Brain",
+        "latin_name": "Encephalon",
+        "system": "Nervous",
+        "icon": "Brain",
+        "definition": "The central processor responsible for cognition and control.",
+        "children": [
+          {
+            "id": "cerebrum",
+            "name": "Cerebrum",
+            "latin_name": "Telencephalon"
+          },
+          {
+            "id": "cerebellum",
+            "name": "Cerebellum",
+            "latin_name": "Metencephalon"
+          },
+          {
+            "id": "brainstem",
+            "name": "Brainstem",
+            "latin_name": "Truncus encephali"
+          }
+        ]
+      },
+      {
+        "id": "spinal_cord",
+        "name": "Spinal Cord",
+        "latin_name": "Medulla spinalis"
+      },
+      {
+        "id": "peripheral_nerves",
+        "name": "Peripheral Nerves",
+        "latin_name": "Nervi peripherici"
+      }
+    ]
   },
   {
-    "id": "UBERON_0000948",
-    "name": "Heart",
-    "latin_name": "Cor",
-    "region": "Torso",
-    "definition": "The vital muscular organ that pumps blood throughout the body.",
-    "importance": "Critical",
-    "icon": "Heart"
+    "id": "sys_cvs",
+    "name": "Cardiovascular System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "heart",
+        "name": "Heart",
+        "latin_name": "Cor",
+        "icon": "Heart"
+      },
+      {
+        "id": "vessels",
+        "name": "Blood Vessels",
+        "children": [
+          {
+            "id": "arteries",
+            "name": "Arteries",
+            "latin_name": "Arteriae"
+          },
+          {
+            "id": "veins",
+            "name": "Veins",
+            "latin_name": "Venae"
+          },
+          {
+            "id": "capillaries",
+            "name": "Capillaries",
+            "latin_name": "Vas capillare"
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "UBERON_0002107",
-    "name": "Liver",
-    "latin_name": "Hepar",
-    "region": "Torso",
-    "definition": "The largest internal organ. Detoxifies the body and manages metabolism.",
-    "importance": "High",
-    "icon": "Activity"
+    "id": "sys_respiratory",
+    "name": "Respiratory System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "lungs",
+        "name": "Lungs",
+        "latin_name": "Pulmones",
+        "children": [
+          {
+            "id": "bronchi",
+            "name": "Bronchi"
+          },
+          {
+            "id": "alveoli",
+            "name": "Alveoli"
+          }
+        ]
+      },
+      {
+        "id": "trachea",
+        "name": "Trachea"
+      },
+      {
+        "id": "larynx",
+        "name": "Larynx"
+      }
+    ]
   },
   {
-    "id": "UBERON_0002048",
-    "name": "Lung",
-    "latin_name": "Pulmo",
-    "region": "Torso",
-    "definition": "The main organ of the respiratory system. Facilitates oxygen intake and CO2 excretion.",
-    "importance": "High",
-    "icon": "Activity"
+    "id": "sys_digestive",
+    "name": "Digestive System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "stomach",
+        "name": "Stomach",
+        "latin_name": "Ventriculus"
+      },
+      {
+        "id": "liver",
+        "name": "Liver",
+        "latin_name": "Hepar"
+      },
+      {
+        "id": "pancreas",
+        "name": "Pancreas"
+      },
+      {
+        "id": "intestines",
+        "name": "Intestines",
+        "children": [
+          {
+            "id": "small_intestine",
+            "name": "Small Intestine",
+            "children": [
+              {
+                "id": "duodenum",
+                "name": "Duodenum"
+              },
+              {
+                "id": "jejunum",
+                "name": "Jejunum"
+              },
+              {
+                "id": "ileum",
+                "name": "Ileum"
+              }
+            ]
+          },
+          {
+            "id": "large_intestine",
+            "name": "Large Intestine",
+            "children": [
+              {
+                "id": "colon",
+                "name": "Colon"
+              },
+              {
+                "id": "rectum",
+                "name": "Rectum"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "UBERON_0000945",
-    "name": "Stomach",
-    "latin_name": "Ventriculus",
-    "region": "Torso",
-    "definition": "One of the main organs of the digestive system. Breaks down food.",
-    "importance": "Medium",
-    "icon": "Activity"
+    "id": "sys_skeletal",
+    "name": "Skeletal System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "axial_skeleton",
+        "name": "Axial Skeleton",
+        "children": [
+          {
+            "id": "skull",
+            "name": "Skull",
+            "latin_name": "Cranium"
+          },
+          {
+            "id": "spine",
+            "name": "Spine",
+            "latin_name": "Columna vertebralis"
+          },
+          {
+            "id": "ribcage",
+            "name": "Rib Cage"
+          }
+        ]
+      },
+      {
+        "id": "appendicular_skeleton",
+        "name": "Appendicular Skeleton",
+        "children": [
+          {
+            "id": "upper_limbs",
+            "name": "Upper Limbs"
+          },
+          {
+            "id": "lower_limbs",
+            "name": "Lower Limbs",
+            "children": [
+              {
+                "id": "femur",
+                "name": "Femur"
+              },
+              {
+                "id": "tibia",
+                "name": "Tibia"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    "id": "UBERON_0002113",
-    "name": "Kidney",
-    "latin_name": "Ren",
-    "region": "Torso",
-    "definition": "Filters blood to remove waste products and excess water as urine.",
-    "importance": "High",
-    "icon": "Activity"
+    "id": "sys_muscular",
+    "name": "Muscular System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "skeletal_muscle",
+        "name": "Skeletal Muscle"
+      },
+      {
+        "id": "smooth_muscle",
+        "name": "Smooth Muscle"
+      },
+      {
+        "id": "cardiac_muscle",
+        "name": "Cardiac Muscle"
+      }
+    ]
+  },
+  {
+    "id": "sys_urinary",
+    "name": "Urinary System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "kidneys",
+        "name": "Kidneys",
+        "latin_name": "Renes"
+      },
+      {
+        "id": "bladder",
+        "name": "Bladder",
+        "latin_name": "Vesica urinaria"
+      }
+    ]
+  },
+  {
+    "id": "sys_endocrine",
+    "name": "Endocrine System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "pituitary",
+        "name": "Pituitary"
+      },
+      {
+        "id": "thyroid",
+        "name": "Thyroid"
+      },
+      {
+        "id": "adrenals",
+        "name": "Adrenals"
+      }
+    ]
+  },
+  {
+    "id": "sys_lymphatic",
+    "name": "Lymphatic System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "spleen",
+        "name": "Spleen"
+      },
+      {
+        "id": "lymph_nodes",
+        "name": "Lymph Nodes"
+      }
+    ]
+  },
+  {
+    "id": "sys_reproductive",
+    "name": "Reproductive System",
+    "isCategory": true,
+    "children": [
+      {
+        "id": "male_reproductive",
+        "name": "Male System"
+      },
+      {
+        "id": "female_reproductive",
+        "name": "Female System",
+        "children": [
+          {
+            "id": "uterus",
+            "name": "Uterus"
+          },
+          {
+            "id": "ovaries",
+            "name": "Ovaries"
+          }
+        ]
+      }
+    ]
   }
 ]
