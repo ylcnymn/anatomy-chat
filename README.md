@@ -89,7 +89,7 @@ The application follows a **"Configuration-First"** approach.
 
 **Yalçın Yaman**
 -   **GitHub:** [@ylcnymn](https://github.com/ylcnymn)
--   **LinkedIn:** [https://www.linkedin.com/in/yalcin-yaman/]
+-   **LinkedIn:** https://www.linkedin.com/in/yalcin-yaman/
 
 ---
 
