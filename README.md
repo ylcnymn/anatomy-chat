@@ -1,4 +1,5 @@
 # 🧠 Anatomy Chat: AI-Powered Anatomical Modeling Platform
+<img width="1912" height="899" alt="image" src="https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b" />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
