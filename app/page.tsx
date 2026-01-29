@@ -9,9 +9,9 @@ import { AIChatClient } from "@/lib/ai-client";
 import SettingsModal from "./components/SettingsModal";
 
 const MODES = [
-    { id: "doctor", label: "Doktor", icon: User, color: "text-blue-400" },
-    { id: "curious", label: "Meraklı", icon: Activity, color: "text-emerald-400" },
-    { id: "child", label: "Çocuk", icon: Baby, color: "text-amber-400" },
+    { id: "doctor", label: "Doctor", icon: User, color: "text-blue-400" },
+    { id: "curious", label: "Curious", icon: Activity, color: "text-emerald-400" },
+    { id: "child", label: "Child", icon: Baby, color: "text-amber-400" },
 ] as const;
 
 export default function Home() {
@@ -172,7 +172,7 @@ export default function Home() {
 
                     {/* Mode Selector */}
                     <div className="space-y-3 mb-8">
-                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Kullanım Modu</p>
+                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Interaction Mode</p>
                         <div className="grid grid-cols-1 gap-1.5">
                             {MODES.map((mode) => (
                                 <button
@@ -202,7 +202,7 @@ export default function Home() {
                                 className="space-y-4"
                             >
                                 <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Sohbet Geçmişi</p>
+                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1">Chat History</p>
                                     <button
                                         onClick={() => createSession(selectedOrgan.id)}
                                         className="p-1 hover:bg-white/10 rounded-md text-indigo-400 transition-colors"
@@ -244,8 +244,8 @@ export default function Home() {
                                                     <button
                                                         onClick={() => useAppStore.setState({ activeSessionId: session.id })}
                                                         className={`flex-1 text-left p-2.5 rounded-lg text-xs transition-all flex items-center justify-between ${activeSessionId === session.id
-                                                                ? "bg-white/5 text-white"
-                                                                : "text-gray-500 hover:text-gray-300 hover:bg-white/5"
+                                                            ? "bg-white/5 text-white"
+                                                            : "text-gray-500 hover:text-gray-300 hover:bg-white/5"
                                                             }`}
                                                     >
                                                         <div className="truncate font-medium">{session.title}</div>
@@ -278,11 +278,11 @@ export default function Home() {
                                                                     className="w-full flex items-center space-x-2 p-2 text-[11px] text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
                                                                 >
                                                                     <Edit3 size={12} />
-                                                                    <span>Yeniden Adlandır</span>
+                                                                    <span>Rename</span>
                                                                 </button>
                                                                 <button
                                                                     onClick={() => {
-                                                                        if (window.confirm('Bu sohbeti silmek istediğine emin misin?')) {
+                                                                        if (window.confirm('Are you sure you want to delete this chat?')) {
                                                                             deleteSession(session.id);
                                                                         }
                                                                         setMenuOpenId(null);
@@ -290,7 +290,7 @@ export default function Home() {
                                                                     className="w-full flex items-center space-x-2 p-2 text-[11px] text-red-500/60 hover:text-red-500 hover:bg-red-500/5 rounded-lg transition-colors"
                                                                 >
                                                                     <Trash2 size={12} />
-                                                                    <span>Sil</span>
+                                                                    <span>Delete</span>
                                                                 </button>
                                                             </div>
                                                         </>
@@ -302,13 +302,13 @@ export default function Home() {
                                 </div>
                                 <button
                                     onClick={() => {
-                                        if (window.confirm('Bu organa ait TÜM sohbet geçmişini silmek istediğine emin misin? Bu işlem geri alınamaz.')) {
+                                        if (window.confirm('Are you sure you want to clear ALL chat history for this organ? This action cannot be undone.')) {
                                             clearOrganHistory(selectedOrgan.id);
                                         }
                                     }}
                                     className="w-full py-2 text-[9px] uppercase tracking-widest text-red-500/30 hover:text-red-500/80 transition-colors font-bold"
                                 >
-                                    Geçmişi Sil
+                                    Clear History
                                 </button>
                             </motion.div>
                         )}
@@ -316,8 +316,8 @@ export default function Home() {
 
                     {/* Organ List */}
                     <div className="space-y-4">
-                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1 border-b border-white/5 pb-2">Vücut Bölgeleri</p>
-                        {["Baş", "Gövde"].map(region => (
+                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest ml-1 border-b border-white/5 pb-2">Body Regions</p>
+                        {["Head", "Torso"].map(region => (
                             <div key={region} className="space-y-1">
                                 <div className="px-1 py-1 text-[9px] font-black text-gray-600 uppercase tracking-widest">{region}</div>
                                 <div className="space-y-0.5">
@@ -347,7 +347,7 @@ export default function Home() {
                         className="w-full flex items-center justify-center space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all text-gray-500 hover:text-white border border-transparent hover:border-white/5"
                     >
                         <Settings size={18} />
-                        <span className="text-sm font-medium">Ayarlar</span>
+                        <span className="text-sm font-medium">Settings</span>
                     </button>
                 </div>
             </aside>
@@ -388,7 +388,7 @@ export default function Home() {
                                     {messages.length === 0 && (
                                         <div className="flex-1 flex flex-col items-center justify-center text-center opacity-30 mt-20">
                                             <MessageSquare size={48} className="mb-4" />
-                                            <p className="text-lg font-medium italic">Seni dinlemeye hazırım...</p>
+                                            <p className="text-lg font-medium italic">I am ready to listen...</p>
                                         </div>
                                     )}
                                     {messages.map((msg, i) => (
@@ -397,7 +397,7 @@ export default function Home() {
                                             className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'} max-w-full`}
                                         >
                                             <div className={`text-[10px] font-bold text-gray-600 mb-2 uppercase tracking-widest px-2`}>
-                                                {msg.role === 'user' ? 'Sen' : selectedOrgan.name}
+                                                {msg.role === 'user' ? 'You' : selectedOrgan.name}
                                             </div>
                                             <div className={`px-5 py-3.5 rounded-2xl text-[15px] leading-relaxed max-w-[90%] shadow-lg ${msg.role === 'user'
                                                 ? 'bg-indigo-600 text-white rounded-tr-none'
@@ -415,7 +415,7 @@ export default function Home() {
                                                     <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:-0.15s]" />
                                                     <div className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce" />
                                                 </div>
-                                                <span className="text-xs text-gray-500 font-medium tracking-wide">Analiz yapılıyor...</span>
+                                                <span className="text-xs text-gray-500 font-medium tracking-wide">Analysing...</span>
                                             </div>
                                         </div>
                                     )}
@@ -428,9 +428,9 @@ export default function Home() {
                                     <div className="w-24 h-24 bg-white/[0.02] border border-white/5 rounded-[2.5rem] flex items-center justify-center mx-auto mb-8">
                                         <Brain size={48} className="text-white/10" />
                                     </div>
-                                    <h2 className="text-3xl font-black text-white tracking-tight">Anatomi Yolculuğu</h2>
+                                    <h2 className="text-3xl font-black text-white tracking-tight">Anatomy Journey</h2>
                                     <p className="text-gray-500 text-sm leading-relaxed">
-                                        Sol menüden bir organ seçerek vücudunun gizemli dünyasını keşfetmeye hemen başlayabilirsin.
+                                        Select an organ from the left menu to start exploring the mysterious world of your body.
                                     </p>
                                 </div>
                             </div>
@@ -455,7 +455,7 @@ export default function Home() {
                                     }}
                                     rows={1}
                                     disabled={isLoading}
-                                    placeholder={`${selectedOrgan.name} hakkında bir şeyler sor...`}
+                                    placeholder={`Ask something about ${selectedOrgan.name}...`}
                                     className="flex-1 bg-transparent py-4 pl-6 pr-14 text-[15px] focus:outline-none resize-none custom-scrollbar"
                                     style={{ maxHeight: '180px' }}
                                 />
@@ -472,7 +472,7 @@ export default function Home() {
                             </div>
                             <div className="mt-3 flex justify-center items-center space-x-4">
                                 <p className="text-[10px] text-gray-700 font-bold uppercase tracking-[0.2em]">
-                                    Enter ile gönder • Shift+Enter satır
+                                    Enter to send • Shift+Enter for new line
                                 </p>
                             </div>
                         </div>

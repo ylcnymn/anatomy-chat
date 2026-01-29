@@ -1,56 +1,56 @@
 [
   {
     "id": "UBERON_0000955",
-    "name": "Beyin",
+    "name": "Brain",
     "latin_name": "Encephalon",
-    "region": "Baş",
-    "definition": "Merkezi sinir sisteminin ana organı. Düşünme, hafıza ve kontrol merkezi.",
-    "importance": "Kritik",
+    "region": "Head",
+    "definition": "The primary organ of the central nervous system. Center for thinking, memory, and control.",
+    "importance": "Critical",
     "icon": "Brain"
   },
   {
     "id": "UBERON_0000948",
-    "name": "Kalp",
+    "name": "Heart",
     "latin_name": "Cor",
-    "region": "Gövde",
-    "definition": "Kanı tüm vücuda pompalayan hayati kaslı organ.",
-    "importance": "Kritik",
+    "region": "Torso",
+    "definition": "The vital muscular organ that pumps blood throughout the body.",
+    "importance": "Critical",
     "icon": "Heart"
   },
   {
     "id": "UBERON_0002107",
-    "name": "Karaciğer",
+    "name": "Liver",
     "latin_name": "Hepar",
-    "region": "Gövde",
-    "definition": "Vücudun en büyük iç organı. Toksinleri temizler ve metabolizmayı yönetir.",
-    "importance": "Yüksek",
+    "region": "Torso",
+    "definition": "The largest internal organ. Detoxifies the body and manages metabolism.",
+    "importance": "High",
     "icon": "Activity"
   },
   {
     "id": "UBERON_0002048",
-    "name": "Akciğer",
+    "name": "Lung",
     "latin_name": "Pulmo",
-    "region": "Gövde",
-    "definition": "Solunum sisteminin ana organı. Oksijen alımı ve CO2 atılımını sağlar.",
-    "importance": "Yüksek",
+    "region": "Torso",
+    "definition": "The main organ of the respiratory system. Facilitates oxygen intake and CO2 excretion.",
+    "importance": "High",
     "icon": "Activity"
   },
   {
     "id": "UBERON_0000945",
-    "name": "Mide",
+    "name": "Stomach",
     "latin_name": "Ventriculus",
-    "region": "Gövde",
-    "definition": "Sindirim sisteminin ana organlarından biri. Besinleri parçalar.",
-    "importance": "Orta",
+    "region": "Torso",
+    "definition": "One of the main organs of the digestive system. Breaks down food.",
+    "importance": "Medium",
     "icon": "Activity"
   },
   {
     "id": "UBERON_0002113",
-    "name": "Böbrek",
+    "name": "Kidney",
     "latin_name": "Ren",
-    "region": "Gövde",
-    "definition": "Kanı süzerek atık maddeleri ve fazla suyu idrar olarak uzaklaştırır.",
-    "importance": "Yüksek",
+    "region": "Torso",
+    "definition": "Filters blood to remove waste products and excess water as urine.",
+    "importance": "High",
     "icon": "Activity"
   }
 ]

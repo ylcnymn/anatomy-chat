@@ -26,7 +26,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
             <div className="w-full max-w-2xl bg-[#0d1117] rounded-xl overflow-hidden shadow-2xl border border-[#30363d]">
                 <div className="p-6 border-b border-[#30363d] flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-white">Add new LLM model</h2>
+                    <h2 className="text-xl font-semibold text-white">LLM Configuration</h2>
                     <button onClick={onClose} className="text-[#8b949e] hover:text-white transition-colors">
                         <X size={20} />
                     </button>
@@ -34,7 +34,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
 
                 <div className="p-8 grid grid-cols-2 gap-6 text-left">
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#c9d1d9]">Provider</label>
+                        <label className="text-sm font-semibold text-[#c9d1d9]">Service Provider</label>
                         <select
                             value={localConfig.provider}
                             onChange={(e) => setLocalConfig({ ...localConfig, provider: e.target.value as any })}
@@ -67,7 +67,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#c9d1d9]">Endpoint URL</label>
+                        <label className="text-sm font-semibold text-[#c9d1d9]">Base URL</label>
                         <input
                             type="text"
                             placeholder="http://host.docker.internal:11434/v1"
@@ -78,7 +78,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[#c9d1d9]">Model ID</label>
+                        <label className="text-sm font-semibold text-[#c9d1d9]">Model Name</label>
                         <input
                             type="text"
                             placeholder="gpt-3.5-turbo, llama3, gpt-4o..."
@@ -90,7 +90,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
 
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <label className="text-sm font-semibold text-[#c9d1d9]">Temp</label>
+                            <label className="text-sm font-semibold text-[#c9d1d9]">Temperature</label>
                             <input
                                 type="number"
                                 step="0.1"
@@ -124,7 +124,7 @@ export default function SettingsModal({ isOpen, onClose }: { isOpen: boolean; on
                         onClick={handleSave}
                         className="bg-[#238636] hover:bg-[#2ea043] text-white font-semibold px-8 py-2 rounded-lg transition-all shadow-md"
                     >
-                        Save Model
+                        Save Configuration
                     </button>
                 </div>
             </div>

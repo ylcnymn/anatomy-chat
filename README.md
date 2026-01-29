@@ -1,30 +1,89 @@
-# Organ Chat - İnatçı ve İnteraktif Anatomi Asistanı
+# Anatomy Chat: Interactive Anatomical Learning and Modeling Platform
 
-Bu proje, insan organlarını birer sohbet partnerine dönüştüren, Next.js tabanlı modern bir web uygulamasıdır.
+## About the Project
 
-## 🚀 Başlatma (Docker ile)
+Anatomy Chat is a modern web application that transforms human anatomy from static images or text-based documents into an interactive experience. This platform models each organ as "intelligent entities" that have their own personality, can share information, and respond to specific questions from the user's perspective.
 
-Uygualamayı Docker üzerinde en performanslı (standalone) modda çalıştırmak için:
+The application is built on a multi-layered "Persona" system to appeal to a wide range of users, from medical students to curious children. Users can chat with their chosen organ with the seriousness of a doctor, the excitement of a curious student, or the imagination of a child.
 
+## Key Features
+
+### 1. Persona-Based AI Interaction
+The application operates the artificial intelligence in three core narrative modes:
+- **Doctor Mode:** Uses an academic language proficient in technical terminology, providing clinical findings and pathological details.
+- **Curious Mode:** Focuses on the functional features and interesting facts of the organ, blending science with everyday language.
+- **Child Mode:** An educational and entertaining language that explains the organ's duty in the body through a fairytale-like narrative using metaphors.
+
+### 2. Advanced Session Management (Multi-Session)
+Users can start multiple chat sessions for each organ:
+- Chats are automatically named based on the first message.
+- Fast switching between sessions is supported.
+- Session titles can be manually renamed or unnecessary sessions can be deleted.
+
+### 3. Modern and Focused UI Architecture
+- **ChatGPT Architecture:** Features a fixed navigation panel on the left and a fluid, centered message area on the right.
+- **Smart Scroll:** Automatic scrolling stops when the user scrolls up to read past messages; it resumes once the user returns to the bottom.
+- **Dark Mode Optimization:** A "Deep Dark" design language has been adopted for night study, providing high contrast without eye strain.
+
+## Technical Stack
+
+- **Framework:** Next.js 14+ (App Router)
+- **Language:** TypeScript
+- **State Management:** Zustand (Persisted via browser storage)
+- **Styling:** Tailwind CSS + Vanilla CSS (Custom UI Components)
+- **Animations:** Framer Motion
+- **Icon Set:** Lucide React
+- **Containerization:** Docker & Docker Compose
+
+## Installation Guide
+
+### Requirements
+- Node.js (v18+) and npm/yarn or
+- Docker and Docker Compose
+
+### Standard Installation
+1. Clone the repository to your local directory:
+   ```bash
+   git clone [repo-url]
+   cd anatomy-chat
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the application in development mode:
+   ```bash
+   npm run dev
+   ```
+4. Navigate to `http://localhost:3000` in your browser.
+
+### Installation with Docker (Recommended)
+To run the application without dealing with dependencies:
 ```bash
 docker-compose up --build
 ```
+This command will compile, optimize, and make the application available at `http://localhost:3000`.
 
-Bu komut:
-1. Uygulamayı derler.
-2. `standalone` moduna optimize eder.
-3. `http://localhost:3000` adresinde yayına alır.
+## Configuration
 
-## 🛠️ Özellikler
+You can configure the following by clicking the "Model Settings" button in the application interface:
+- **API Provider:** OpenRouter compatible providers such as OpenAI, Claude, Groq, or Ollama.
+- **Model Selection:** The AI model to be used (e.g., gpt-4, claude-3-opus).
+- **API Key:** The secure key obtained from your provider.
+- **Parameters:** Temperature and Max Tokens settings.
 
-- **AI Model Esnekliği:** OpenAI, Claude veya Ollama (Local) desteği.
-- **3 Farklı Mod:** Doktor, Meraklı ve Çocuk modları ile her seviyeye uygun anlatım.
-- **Uberon Ontolojisi:** Gerçek tıbbi veri hiyerarşisi üzerine kurulu organ listesi.
-- **Premium Arayüz:** Karanlık mod, cam efektleri ve akışkan animasyonlar.
+## Project Structure
 
-## 📁 Dosya Yapısı
+- `/app`: Page structures, layouts, and UI components.
+- `/lib`: Core libraries containing the Zustand store, AI client, and persona logic.
+- `/data`: Dataset in JSON format containing anatomical data.
+- `/public`: Static assets.
+- `/scripts`: Scripts for data processing and ontology optimization.
 
-- `app/`: Next.js uygulama dosyaları ve UI bileşenleri.
-- `scripts/`: Veri madenciliği ve Uberon extraction scriptleri.
-- `data/`: İşlenmiş organ verileri.
-- `Dockerfile` & `docker-compose.yml`: Docker konfigürasyonu.
+## Legal Disclaimer
+
+**Important:** Anatomy Chat is a tool developed solely for educational and informational purposes. No content generated by the application represents professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional with any questions regarding health.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for further information.

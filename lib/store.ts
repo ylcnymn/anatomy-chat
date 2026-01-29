@@ -52,7 +52,7 @@ export const useAppStore = create<AppState>()(
                 const newSession: ChatSession = {
                     id,
                     organId,
-                    title: 'Yeni Sohbet',
+                    title: 'New Chat',
                     messages: [],
                     timestamp: Date.now(),
                 };
@@ -78,7 +78,7 @@ export const useAppStore = create<AppState>()(
                         const newMsgs = Array.isArray(message) ? message : [...s.messages, message];
                         // Auto-title from first user message
                         let title = s.title;
-                        if (title === 'Yeni Sohbet' && newMsgs.length > 0) {
+                        if (title === 'New Chat' && newMsgs.length > 0) {
                             const firstUserMsg = newMsgs.find(m => m.role === 'user');
                             if (firstUserMsg) {
                                 title = firstUserMsg.content.slice(0, 30) + (firstUserMsg.content.length > 30 ? '...' : '');
