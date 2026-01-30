@@ -7,7 +7,8 @@
 
 > **Anatomy Chat** is a persona-driven AI anatomy explorer showcasing advanced prompt orchestration, domain modeling, and stateful LLM UX.
 
-![Anatomy Chat Dashboard](https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b)
+![Anatomy Chat Dashboard](https://github.com/user-attachments/assets/d6b522a6-a82d-405d-aa3b-7d5e1daa78c8)
+
 
 **Anatomy Chat** is a high-fidelity, interactive educational platform designed to demonstrate the power of **Large Language Models (LLMs)** in specialized domain modeling. It transforms static anatomical data into a dynamic, multi-modal learning experience where every organ is an "intelligent agent" with its own specific knowledge base, persona, and clinical context.
 
