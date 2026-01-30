@@ -10,34 +10,39 @@
         "latin_name": "Encephalon",
         "system": "Nervous",
         "icon": "Brain",
-        "definition": "The central processor responsible for cognition and control.",
+        "definition": "The central processor responsible for cognition, memory, and voluntary motor control.",
         "children": [
           {
             "id": "cerebrum",
             "name": "Cerebrum",
-            "latin_name": "Telencephalon"
+            "latin_name": "Telencephalon",
+            "definition": "The largest part of the brain, responsible for high-level functions like thought and action."
           },
           {
             "id": "cerebellum",
             "name": "Cerebellum",
-            "latin_name": "Metencephalon"
+            "latin_name": "Metencephalon",
+            "definition": "Coordinates voluntary movements such as posture, balance, and coordination."
           },
           {
             "id": "brainstem",
             "name": "Brainstem",
-            "latin_name": "Truncus encephali"
+            "latin_name": "Truncus encephali",
+            "definition": "Regulates vital cardiac and respiratory functions and maintains consciousness."
           }
         ]
       },
       {
         "id": "spinal_cord",
         "name": "Spinal Cord",
-        "latin_name": "Medulla spinalis"
+        "latin_name": "Medulla spinalis",
+        "definition": "The main pathway for information connecting the brain and peripheral nervous system."
       },
       {
         "id": "peripheral_nerves",
         "name": "Peripheral Nerves",
-        "latin_name": "Nervi peripherici"
+        "latin_name": "Nervi peripherici",
+        "definition": "A network of nerves extending outside the central nervous system to the limbs and organs."
       }
     ]
   },
@@ -50,26 +55,31 @@
         "id": "heart",
         "name": "Heart",
         "latin_name": "Cor",
-        "icon": "Heart"
+        "icon": "Heart",
+        "definition": "A muscular pump that circulates blood throughout the entire body."
       },
       {
         "id": "vessels",
         "name": "Blood Vessels",
+        "definition": "A vast network of tubes that carry blood to and from all parts of the body.",
         "children": [
           {
             "id": "arteries",
             "name": "Arteries",
-            "latin_name": "Arteriae"
+            "latin_name": "Arteriae",
+            "definition": "Vessels that carry oxygen-rich blood away from the heart."
           },
           {
             "id": "veins",
             "name": "Veins",
-            "latin_name": "Venae"
+            "latin_name": "Venae",
+            "definition": "Vessels that return deoxygenated blood back to the heart."
           },
           {
             "id": "capillaries",
             "name": "Capillaries",
-            "latin_name": "Vas capillare"
+            "latin_name": "Vas capillare",
+            "definition": "Tiny vessels where the exchange of water, oxygen, and nutrients occurs."
           }
         ]
       }
@@ -84,24 +94,29 @@
         "id": "lungs",
         "name": "Lungs",
         "latin_name": "Pulmones",
+        "definition": "The primary organs of respiration where gas exchange takes place.",
         "children": [
           {
             "id": "bronchi",
-            "name": "Bronchi"
+            "name": "Bronchi",
+            "definition": "The main passageways that carry air into the lungs."
           },
           {
             "id": "alveoli",
-            "name": "Alveoli"
+            "name": "Alveoli",
+            "definition": "Tiny air sacs where oxygen and carbon dioxide are exchanged."
           }
         ]
       },
       {
         "id": "trachea",
-        "name": "Trachea"
+        "name": "Trachea",
+        "definition": "Commonly known as the windpipe, it provides airflow to and from the lungs."
       },
       {
         "id": "larynx",
-        "name": "Larynx"
+        "name": "Larynx",
+        "definition": "Also called the voice box, it protects the lower airways and houses the vocal cords."
       }
     ]
   },
@@ -113,50 +128,61 @@
       {
         "id": "stomach",
         "name": "Stomach",
-        "latin_name": "Ventriculus"
+        "latin_name": "Ventriculus",
+        "definition": "A muscular organ that contains acids and enzymes to break down food."
       },
       {
         "id": "liver",
         "name": "Liver",
-        "latin_name": "Hepar"
+        "latin_name": "Hepar",
+        "definition": "The largest internal organ, responsible for detoxification and protein synthesis."
       },
       {
         "id": "pancreas",
-        "name": "Pancreas"
+        "name": "Pancreas",
+        "definition": "Produces important enzymes and hormones like insulin for digestion and sugar regulation."
       },
       {
         "id": "intestines",
         "name": "Intestines",
+        "definition": "The portion of the digestive tract responsible for nutrient and water absorption.",
         "children": [
           {
             "id": "small_intestine",
             "name": "Small Intestine",
+            "definition": "Where 90% of the digestion and absorption of food occurs.",
             "children": [
               {
                 "id": "duodenum",
-                "name": "Duodenum"
+                "name": "Duodenum",
+                "definition": "The first section of the small intestine where most chemical digestion takes place."
               },
               {
                 "id": "jejunum",
-                "name": "Jejunum"
+                "name": "Jejunum",
+                "definition": "The middle part of the small intestine specialized for absorption."
               },
               {
                 "id": "ileum",
-                "name": "Ileum"
+                "name": "Ileum",
+                "definition": "The final section of the small intestine which absorbs B12 and bile salts."
               }
             ]
           },
           {
             "id": "large_intestine",
             "name": "Large Intestine",
+            "definition": "Responsible for absorbing water from the remaining indigestible food matter.",
             "children": [
               {
                 "id": "colon",
-                "name": "Colon"
+                "name": "Colon",
+                "definition": "The main part of the large intestine where water and salts are absorbed."
               },
               {
                 "id": "rectum",
-                "name": "Rectum"
+                "name": "Rectum",
+                "definition": "The final straight portion of the large intestine where waste is stored."
               }
             ]
           }
@@ -172,42 +198,51 @@
       {
         "id": "axial_skeleton",
         "name": "Axial Skeleton",
+        "definition": "The part of the skeleton that consists of the bones of the head and trunk.",
         "children": [
           {
             "id": "skull",
             "name": "Skull",
-            "latin_name": "Cranium"
+            "latin_name": "Cranium",
+            "definition": "Bony structure that forms the head and surrounds the brain."
           },
           {
             "id": "spine",
             "name": "Spine",
-            "latin_name": "Columna vertebralis"
+            "latin_name": "Columna vertebralis",
+            "definition": "Flexible column of vertebrae protecting the spinal cord."
           },
           {
             "id": "ribcage",
-            "name": "Rib Cage"
+            "name": "Rib Cage",
+            "definition": "Bony frame of the thorax that protects the heart and lungs."
           }
         ]
       },
       {
         "id": "appendicular_skeleton",
         "name": "Appendicular Skeleton",
+        "definition": "Includes the bones of the shoulder girdle, pelvic girdle, and limbs.",
         "children": [
           {
             "id": "upper_limbs",
-            "name": "Upper Limbs"
+            "name": "Upper Limbs",
+            "definition": "The arms and hands used for manipulation and reaching."
           },
           {
             "id": "lower_limbs",
             "name": "Lower Limbs",
+            "definition": "The legs and feet used for support and mobility.",
             "children": [
               {
                 "id": "femur",
-                "name": "Femur"
+                "name": "Femur",
+                "definition": "The thigh bone, the longest and strongest bone in the body."
               },
               {
                 "id": "tibia",
-                "name": "Tibia"
+                "name": "Tibia",
+                "definition": "The shinbone, the larger of the two bones in the lower leg."
               }
             ]
           }
@@ -222,15 +257,18 @@
     "children": [
       {
         "id": "skeletal_muscle",
-        "name": "Skeletal Muscle"
+        "name": "Skeletal Muscle",
+        "definition": "Striated muscles connected to bones that allow voluntary movement."
       },
       {
         "id": "smooth_muscle",
-        "name": "Smooth Muscle"
+        "name": "Smooth Muscle",
+        "definition": "Involuntary muscles found in the walls of internal organs."
       },
       {
         "id": "cardiac_muscle",
-        "name": "Cardiac Muscle"
+        "name": "Cardiac Muscle",
+        "definition": "The unique involuntary muscle found only in the heart."
       }
     ]
   },
@@ -242,12 +280,14 @@
       {
         "id": "kidneys",
         "name": "Kidneys",
-        "latin_name": "Renes"
+        "latin_name": "Renes",
+        "definition": "Filtering organs that remove waste and extra water from the blood."
       },
       {
         "id": "bladder",
         "name": "Bladder",
-        "latin_name": "Vesica urinaria"
+        "latin_name": "Vesica urinaria",
+        "definition": "A muscular sac that stores urine until it is excreted."
       }
     ]
   },
@@ -258,15 +298,18 @@
     "children": [
       {
         "id": "pituitary",
-        "name": "Pituitary"
+        "name": "Pituitary",
+        "definition": "Often called the master gland, it controls many other endocrine glands."
       },
       {
         "id": "thyroid",
-        "name": "Thyroid"
+        "name": "Thyroid",
+        "definition": "Produces hormones that regulate the body's metabolic rate."
       },
       {
         "id": "adrenals",
-        "name": "Adrenals"
+        "name": "Adrenals",
+        "definition": "Produce hormones that help regulate metabolism and response to stress."
       }
     ]
   },
@@ -277,11 +320,13 @@
     "children": [
       {
         "id": "spleen",
-        "name": "Spleen"
+        "name": "Spleen",
+        "definition": "An organ that filters blood and plays a key role in the immune system."
       },
       {
         "id": "lymph_nodes",
-        "name": "Lymph Nodes"
+        "name": "Lymph Nodes",
+        "definition": "Small structures that filter foreign substances from the lymphatic fluid."
       }
     ]
   },
@@ -292,19 +337,23 @@
     "children": [
       {
         "id": "male_reproductive",
-        "name": "Male System"
+        "name": "Male System",
+        "definition": "Organs involved in the production of sperm and male hormones."
       },
       {
         "id": "female_reproductive",
         "name": "Female System",
+        "definition": "Organs involved in the production of eggs and female hormones.",
         "children": [
           {
             "id": "uterus",
-            "name": "Uterus"
+            "name": "Uterus",
+            "definition": "The womb, where a fetus develops during pregnancy."
           },
           {
             "id": "ovaries",
-            "name": "Ovaries"
+            "name": "Ovaries",
+            "definition": "Produce eggs and hormones like estrogen."
           }
         ]
       }

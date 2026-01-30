@@ -5,7 +5,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescript.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC)](https://tailwindcss.com/)
 
-<img width="1912" height="899" alt="image" src="https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b" />
+> **Anatomy Chat** is a persona-driven AI anatomy explorer showcasing advanced prompt orchestration, domain modeling, and stateful LLM UX.
+
+![Anatomy Chat Dashboard](https://github.com/user-attachments/assets/86fa42b3-f699-4146-ba38-fc435f14282b)
 
 **Anatomy Chat** is a high-fidelity, interactive educational platform designed to demonstrate the power of **Large Language Models (LLMs)** in specialized domain modeling. It transforms static anatomical data into a dynamic, multi-modal learning experience where every organ is an "intelligent agent" with its own specific knowledge base, persona, and clinical context.
 
@@ -17,6 +19,13 @@ This project is not just a chat interface; it is an exploration of **Architectur
 1.  **Structure Complex Ontologies:** Managing hierarchical anatomical systems (Nervous, Digestive, etc.) in a JSON-driven data layer.
 2.  **Impersonate Specialized Personas:** Using advanced prompt engineering to switch between academic (Doctor), educational (Curious), and metaphorical (Child) reasoning.
 3.  **State-Persistent Experience:** Leveraging local storage and Zustand to maintain complex session states without a heavy backend.
+
+---
+
+## 🎯 Who Is This For?
+- **AI Engineers** exploring prompt orchestration and domain-specific system prompts.
+- **Frontend Developers** building high-fidelity, LLM-driven user experiences.
+- **Educators** experimenting with adaptive and multi-persona learning interfaces.
 
 ---
 

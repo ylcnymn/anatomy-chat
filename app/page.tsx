@@ -10,10 +10,16 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const MODES = [
-    { id: "doctor", label: "Doctor", icon: User, color: "text-blue-400" },
-    { id: "curious", label: "Curious", icon: Activity, color: "text-emerald-400" },
-    { id: "child", label: "Child", icon: Baby, color: "text-amber-400" },
+    { id: "doctor", label: "Doctor", icon: User, color: "text-blue-400", bgColor: "bg-blue-400/10", borderColor: "border-blue-400/20" },
+    { id: "curious", label: "Curious", icon: Activity, color: "text-emerald-400", bgColor: "bg-emerald-400/10", borderColor: "border-emerald-400/20" },
+    { id: "child", label: "Child", icon: Baby, color: "text-amber-400", bgColor: "bg-amber-400/10", borderColor: "border-amber-400/20" },
 ] as const;
+
+const QUICK_PROMPTS = {
+    doctor: ["Common pathologies", "Diagnostic imaging", "Anatomical landmarks", "Vascular supply"],
+    curious: ["Amazing facts", "How it works", "Health tips", "Common myths"],
+    child: ["What is its job?", "Why is it important?", "Fun facts", "How do I take care of it?"],
+};
 
 export default function Home() {
     const { config, selectedMode, setSelectedMode, sessions, activeSessionId, createSession, deleteSession, renameSession, saveMessage, clearOrganHistory, _hasHydrated } = useAppStore();
@@ -81,17 +87,18 @@ export default function Home() {
         scrollToBottom();
     }, [messages]);
 
-    const handleSend = async () => {
-        if (!input.trim() || !selectedOrgan || !activeSessionId || isLoading) return;
+    const handleSend = async (overrideInput?: string) => {
+        const textToSend = overrideInput || input;
+        if (!textToSend.trim() || !selectedOrgan || !activeSessionId || isLoading) return;
 
-        const userMessage: Message = { role: "user" as const, content: input };
+        const userMessage: Message = { role: "user" as const, content: textToSend };
         const updatedMessages: Message[] = [...messages, userMessage];
 
         setIsAutoScroll(true);
         setMessages(updatedMessages);
         saveMessage(activeSessionId, updatedMessages);
 
-        setInput("");
+        if (!overrideInput) setInput("");
         setIsLoading(true);
 
         try {
@@ -334,27 +341,71 @@ export default function Home() {
                                         </div>
                                         <h2 className="text-3xl font-black text-white">{selectedOrgan.name}</h2>
                                         <p className="text-xs text-indigo-400/50 font-mono mt-1 uppercase tracking-widest">{selectedOrgan.latin_name || selectedOrgan.latin}</p>
+                                        {selectedOrgan.definition && (
+                                            <p className="mt-4 text-gray-400 text-sm max-w-lg mx-auto leading-relaxed border-t border-white/5 pt-4">
+                                                {selectedOrgan.definition}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
 
                                 <div className="flex-1 flex flex-col space-y-8 pb-32">
                                     {messages.length === 0 && (
-                                        <div className="flex-1 flex flex-col items-center justify-center text-center opacity-30 mt-20">
-                                            <MessageSquare size={48} className="mb-4" /><p className="text-lg font-medium italic">I am ready to listen...</p>
-                                        </div>
-                                    )}
-                                    {messages.map((msg, i) => (
-                                        <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'} max-w-full`}>
-                                            <div className="text-[10px] font-bold text-gray-500/60 mb-2 uppercase tracking-widest px-2">{msg.role === 'user' ? 'You' : selectedOrgan.name}</div>
-                                            <div className={`px-6 py-4 rounded-2xl text-[15px] leading-relaxed max-w-[90%] shadow-xl ${msg.role === 'user' ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-[#161616] border border-white/10 text-gray-200 rounded-tl-none'}`}>
-                                                <div className="markdown-content">
-                                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                                        {msg.content}
-                                                    </ReactMarkdown>
+                                        <div className="flex-1 flex flex-col items-center justify-center space-y-8 mt-10">
+                                            <div className="flex flex-col items-center opacity-30">
+                                                <MessageSquare size={48} className="mb-4" />
+                                                <p className="text-lg font-medium italic">Begin your exploration...</p>
+                                            </div>
+
+                                            <div className="w-full max-w-2xl">
+                                                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest text-center mb-4">Suggested Topics</p>
+                                                <div className="flex flex-wrap justify-center gap-2">
+                                                    {QUICK_PROMPTS[selectedMode].map((prompt, idx) => (
+                                                        <button
+                                                            key={idx}
+                                                            onClick={() => handleSend(prompt)}
+                                                            className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-gray-400 hover:bg-white/10 hover:text-white hover:border-indigo-500/50 transition-all duration-200"
+                                                        >
+                                                            {prompt}
+                                                        </button>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    )}
+                                    {messages.map((msg, i) => {
+                                        const isBot = msg.role === 'assistant';
+                                        const modeConfig = MODES.find(m => m.id === selectedMode);
+                                        const Icon = modeConfig?.icon || Activity;
+
+                                        return (
+                                            <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'} max-w-full`}>
+                                                <div className="flex items-center space-x-2 px-2 mb-2">
+                                                    {!isBot && <div className="text-[10px] font-bold text-gray-500/60 uppercase tracking-widest">You</div>}
+                                                    {isBot && (
+                                                        <>
+                                                            <div className={`p-1 rounded-md ${modeConfig?.bgColor || 'bg-white/5'}`}>
+                                                                <Icon size={10} className={modeConfig?.color || 'text-white'} />
+                                                            </div>
+                                                            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                                                {selectedOrgan.name} <span className="text-gray-600 font-normal">as {modeConfig?.label}</span>
+                                                            </div>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                <div className={`px-6 py-4 rounded-2xl text-[15px] leading-relaxed max-w-[90%] shadow-xl transition-all ${msg.role === 'user'
+                                                    ? 'bg-indigo-600 text-white rounded-tr-none'
+                                                    : `bg-[#161616] border ${modeConfig?.borderColor || 'border-white/10'} text-gray-200 rounded-tl-none`
+                                                    }`}>
+                                                    <div className="markdown-content">
+                                                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                            {msg.content}
+                                                        </ReactMarkdown>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                     {isLoading && messages[messages.length - 1]?.role !== 'assistant' && (
                                         <div className="flex items-start">
                                             <div className="bg-white/[0.02] border border-white/5 px-4 py-3 rounded-2xl flex items-center space-x-3">
@@ -382,7 +433,7 @@ export default function Home() {
                                     rows={1} disabled={isLoading} placeholder={`Ask something about ${selectedOrgan.name}...`}
                                     className="flex-1 bg-transparent py-4 pl-6 pr-14 text-[15px] focus:outline-none resize-none"
                                 />
-                                <button onClick={handleSend} disabled={isLoading || !input.trim()} className={`absolute right-3 p-2.5 rounded-xl transition-all ${input.trim() ? 'text-indigo-400' : 'text-gray-700'}`}>{isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={20} />}</button>
+                                <button onClick={() => handleSend()} disabled={isLoading || !input.trim()} className={`absolute right-3 p-2.5 rounded-xl transition-all ${input.trim() ? 'text-indigo-400' : 'text-gray-700'}`}>{isLoading ? <Loader2 size={18} className="animate-spin" /> : <Send size={20} />}</button>
                             </div>
                             <div className="mt-3 text-center"><p className="text-[10px] text-gray-700 font-bold uppercase tracking-widest">Enter to send • Shift+Enter for new line</p></div>
                         </div>
