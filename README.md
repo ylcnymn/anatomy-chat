@@ -7,8 +7,10 @@
 
 > **Anatomy Chat** is a persona-driven AI anatomy explorer showcasing advanced prompt orchestration, domain modeling, and stateful LLM UX.
 
-![Anatomy Chat Dashboard](https://github.com/user-attachments/assets/d6b522a6-a82d-405d-aa3b-7d5e1daa78c8)
+> Most AI anatomy apps are just chatbots wrapped around medical text.  
+> **Anatomy Chat treats each organ as a persona-driven intelligent agent.**
 
+![Anatomy Chat Dashboard](https://github.com/user-attachments/assets/d6b522a6-a82d-405d-aa3b-7d5e1daa78c8)
 
 **Anatomy Chat** is a high-fidelity, interactive educational platform designed to demonstrate the power of **Large Language Models (LLMs)** in specialized domain modeling. It transforms static anatomical data into a dynamic, multi-modal learning experience where every organ is an "intelligent agent" with its own specific knowledge base, persona, and clinical context.
 
@@ -16,10 +18,20 @@
 
 ## 🚀 The Vision: Beyond Simple Chatbots
 
-This project is not just a chat interface; it is an exploration of **Architectural AI Orchestration**. It demonstrates how to:
+This project is not just a chat interface; it is an exploration of **Architectural AI Orchestration**. Built as an experiment in prompt orchestration and domain-specific LLM UX. 
+
+It demonstrates how to:
 1.  **Structure Complex Ontologies:** Managing hierarchical anatomical systems (Nervous, Digestive, etc.) in a JSON-driven data layer.
 2.  **Impersonate Specialized Personas:** Using advanced prompt engineering to switch between academic (Doctor), educational (Curious), and metaphorical (Child) reasoning.
 3.  **State-Persistent Experience:** Leveraging local storage and Zustand to maintain complex session states without a heavy backend.
+
+---
+
+## 🤔 Why Is This Interesting?
+- **Organs as Agents:** Organs are modeled as intelligent agents with unique behavioral guidelines, not just static text labels.
+- **Dynamic Orchestration:** System prompts are generated on-the-fly, injecting anatomical definitions and persona constraints into the context window.
+- **Local-First Architecture:** Zero backend required for persistence — all conversation history and configurations are handled locally via Zustand.
+- **UX Experimentation:** Navigating a complex 3D-like hierarchical body map while maintaining context-aware AI sessions.
 
 ---
 
